@@ -5,13 +5,11 @@ import sys
 from sklearn.feature_selection import SelectKBest
 from sklearn.feature_selection import chi2
 
-npz = scipy.sparse.load_npz(sys.argv[2])
-data = pd.read_hdf(sys.argv[1])
-skb = SelectKBest(score_func=chi2, k = 10)
+npz = scipy.sparse.load_npz('tfidfs.npz')
+data = pd.read_hdf('sandbox.h5')
+skb = SelectKBest(score_func=chi2, k = 300)
 X = npz
 y = data['username']
 chosen = skb.fit_transform(X, y)
-print(chosen)
 fn = skb.get_support(True)
-print(fn)
 np.save("chosen.npy", fn)
