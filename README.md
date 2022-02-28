@@ -13,3 +13,4 @@
 ## To do:
 - improve accuracy of results
 - create script to run all of the above in a single file
+- create parameters to mess with hyperparameters so they can be more easily edited and compared
