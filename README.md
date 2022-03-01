@@ -14,3 +14,7 @@
 - improve accuracy of results
 - create script to run all of the above in a single file
 - create parameters to mess with hyperparameters so they can be more easily edited and compared
+- transitioning from unigrams to bigrams
+
+## Notes for later:
+- sandboxMaker.py is limited to 30000

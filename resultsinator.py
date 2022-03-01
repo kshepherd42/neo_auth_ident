@@ -6,7 +6,7 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import cross_val_score, KFold
 from sklearn.neighbors import KNeighborsClassifier
 
-num = 7
+num = 10
 
 hdf = pd.read_hdf("sandbox.h5")
 files_by_auth_name = hdf.groupby(['username']).indices
@@ -39,7 +39,7 @@ chosen_indicies = np.load("chosen.npy")
 X = np.zeros([cross_val_indicies.shape[0], len(chosen_indicies)])
 for i, cross_val_index in enumerate(cross_val_indicies):
   print(i, end="\r")
-  X[i, : cross_val_indicies.shape[0]] = tfidfs[files[cross_val_index],chosen_indicies]
+  X[i, : ] = tfidfs[files[cross_val_index],chosen_indicies]
 
 #code to generate the results
 rfc = RandomForestClassifier()
