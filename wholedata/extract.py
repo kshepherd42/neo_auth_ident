@@ -6,8 +6,9 @@ import scipy as sp
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 #desired settings
-max_features = 20000
+max_features = 2000
 data_h5 = 'c_cpp_h_program_cc9995_vs4048_a0.5_l-1_test.h5'
+print(f"extract is now running with the following settings:\nmax features = {max_features}\ndata_h5 = {data_h5}")
 
 vector = TfidfVectorizer(
                          max_features=max_features,

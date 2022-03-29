@@ -11,10 +11,10 @@ from sklearn.feature_selection import mutual_info_classif
 #desired settings
 use_score = False
 numtoselect = 1000 #only matters if use_score
-max_features = 20000 #only matters if !use_score
-data_h5 = 'sandbox.h5'
-
-
+max_features = 2000 #only matters if !use_score
+data_h5 = 'c_cpp_h_program_cc9995_vs4048_a0.5_l-1_test.h5'
+print(f"selection is now running with the following settings:\nuse_score = {use_score}\nnumtoselect = {numtoselect}\nmax_features = {max_features}")
+print(f"data_h5 = {data_h5}")
 if(use_score):
   npz = scipy.sparse.load_npz('tfidfs.npz')
   data = pd.read_hdf(data_h5)

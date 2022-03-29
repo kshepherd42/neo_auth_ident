@@ -8,11 +8,13 @@ from sklearn.neighbors import KNeighborsClassifier
 
 
 #desired settings
-k_cross_val = 9
+k_cross_val = 3
 data_h5 = 'c_cpp_h_program_cc9995_vs4048_a0.5_l-1_test.h5'
 shorten_awk = True
-awk_desired = 1000 #only matters if shorten awk
-
+awk_desired = 1800 #only matters if shorten awk
+print(f"results is now using the following settings:")
+print(f"k_cross_val = {k_cross_val}")
+print(f"data_h5 = {data_h5}\nshorten authors with k = {shorten_awk}\nawk_desired = {awk_desired}")
 
 hdf = pd.read_hdf(data_h5)
 files_by_auth_name = hdf.groupby(['username']).indices
